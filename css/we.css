@@ -50,3 +50,8 @@
 .we-icon.we-icon-info{
     background-image: url("../images/info.png");
 }
+.we-date-picker {
+}
+.we-date-picker .input-medium{
+    width: 168px;
+}

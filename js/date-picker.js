@@ -29,7 +29,7 @@
 		name: '',
 		placeHolder: '',
 		inputSize: 'medium',
-		cls: 'input-append',
+		cls: 'we-date-picker input-append',
 		doubleCalendar:true,
 		events: [{
 			event: 'click',
