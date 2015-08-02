@@ -43,8 +43,29 @@ CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者�
 ## 快速上手
 ----------------------------
 
+**1、第三方组件库依赖**
 
-在需要使用本框架的页面中，添加以下引用即可
+`````````html
+
+<!-- 第三方依赖库 start -->
+<script type="text/javascript" src="../lib/jquery/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.tmpl.js"></script>
+<script type="text/javascript" src="../lib/bootstrap-2.0.0/js/bootstrap.min.js"></script>
+
+<!-- 日期组件依赖该第三方组件 -->
+<script type="text/javascript" src="../lib/my97datepicker/wdatepicker.js"></script>
+
+<!-- 富文本编辑器组件依赖该第三方组件 -->
+<script type="text/javascript" src="../lib/umeditor-1.2.2/umeditor.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="../lib/bootstrap-2.0.0/css/bootstrap.min.css"/>
+<!-- 第三方依赖库 end -->
+
+`````````
+
+
+
+**2、在需要使用本框架的页面中，添加以下引用即可**
 
 `````````html
 
@@ -53,21 +74,6 @@ CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者�
 `````````
 
 
-第三方组件库依赖
 
-`````````html
-
-<!-- 第三方依赖库 start -->
-<script type="text/javascript" src="../lib/jquery/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="../lib/jquery/jquery.tmpl.js"></script>
-<script type="text/javascript" src="../lib/bootstrap-2.0.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../lib/my97datepicker/wdatepicker.js"></script>
-<script type="text/javascript" src="../lib/umeditor-1.2.2/umeditor.min.js"></script>
-<link type="text/css" rel="stylesheet" href="../lib/bootstrap-2.0.0/css/bootstrap.min.css"/>
-<!-- 第三方依赖库 end -->
-
-`````````
-
-
-使用时，请将路径切换为您应用中的具体路径
+PS：使用时，请将路径切换为您应用中的具体路径
 
