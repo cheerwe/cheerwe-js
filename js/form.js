@@ -236,14 +236,13 @@
 			Form.hideValidateMsg(el);
 
 			//添加错误样式
-			el.parent().parent().addClass(validateCls);
+			el.parents('.control-group:first').addClass(validateCls);
 
 			el.tooltip({
 				title: msg,
 				placement: 'right',
 				container: el.parent()
 			});
-
 			el.get(0).validateCls = validateCls;
 			el.validateCls = validateCls;
 			el.tooltip('show');
