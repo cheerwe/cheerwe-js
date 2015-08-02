@@ -1,5 +1,7 @@
 (function() {
-    var script = document.getElementById('wejs');
+    var script = document.getElementsByTagName('script');
+    script = script[script.length - 1];
+
     var path = script.src.replace('we.js', '');
 
     var scripts = [

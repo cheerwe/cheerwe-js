@@ -3,7 +3,7 @@ CheerweJS
 
 CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者使用最少的代码，完成预定义的功能需求，本框架没有什么高级的架构设计，没有太多新潮的设计理念，唯有最简洁的代码风格，让您快速上手使用
 
-说明
+## 说明
 --------------------------
 
 ### 目录结构说明
@@ -21,7 +21,7 @@ CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者�
 本框架依赖一个核心的core，核心core可以单独使用，不依赖于任何其他的第三方库，核心core主题提供各类公共的帮助方法，提供所有组件的基类$we.Object
 
 
-组件列表
+## 组件列表
 --------------------------
 
 * Core
@@ -38,3 +38,36 @@ CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者�
 * Pagebar
 * Select
 * Tabs
+
+
+## 快速上手
+----------------------------
+
+
+在需要使用本框架的页面中，添加以下引用即可
+
+`````````html
+
+<script type="text/javascript" src="../we.js"></script>
+
+`````````
+
+
+第三方组件库依赖
+
+`````````html
+
+<!-- 第三方依赖库 start -->
+<script type="text/javascript" src="../lib/jquery/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../lib/jquery/jquery.tmpl.js"></script>
+<script type="text/javascript" src="../lib/bootstrap-2.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../lib/my97datepicker/wdatepicker.js"></script>
+<script type="text/javascript" src="../lib/umeditor-1.2.2/umeditor.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../lib/bootstrap-2.0.0/css/bootstrap.min.css"/>
+<!-- 第三方依赖库 end -->
+
+`````````
+
+
+使用时，请将路径切换为您应用中的具体路径
+
