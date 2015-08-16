@@ -30,7 +30,7 @@
 		placeHolder: '',
 		inputSize: 'medium',
 		cls: 'we-date-picker input-append',
-		doubleCalendar:true,
+		doubleCalendar: true,
 		events: [{
 			event: 'click',
 			selector: DR_BTN,
@@ -58,7 +58,7 @@
 				_this = this,
 				config = {
 					el: ipt.get(0),
-					doubleCalendar:this.doubleCalendar,
+					doubleCalendar: this.doubleCalendar,
 					dateFmt: this.format,
 					onpicked: function() {
 						_this._onPicked();
@@ -148,6 +148,7 @@
 		value: 'string',
 		inputSize: 'string',
 		format: 'string',
+		doubleCalendar: 'boolean',
 		events: ['change']
 	});
 })();
