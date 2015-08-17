@@ -30,7 +30,7 @@
 		placeHolder: '',
 		inputSize: 'medium',
 		cls: 'we-date-picker input-append',
-		doubleCalendar: true,
+		doubleCalendar: false,
 		events: [{
 			event: 'click',
 			selector: DR_BTN,
@@ -137,7 +137,7 @@
 		}
 	});
 
-	var selector = '[data-role="wejs-date-picker"]';
+	var selector = '[data-role="wejs-datepicker"]';
 	$we.autoRender(selector, $we.DatePicker, {
 		min: 'string',
 		max: 'string',
