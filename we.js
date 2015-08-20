@@ -10,18 +10,23 @@
 
     var loaders = $(script).data('loader');
 
-    var srcList = [];
+    var srcList = ['core', 'ajax', 'component'];
 
     if (loaders == 'all') {
-        srcList = ['core', 'component', 'ajax', 'auto-complete', 'date-picker', 'dialog', 'form', 'grid', 'mask', 'message', 'number-editor', 'pagebar', 'select', 'tabs'];
+        srcList = srcList.concat(['auto-complete', 'date-picker', 'dialog', 'form', 'grid', 'mask', 'message', 'number-editor', 'pagebar', 'select', 'tabs']);
     } else if (!loaders) {
 
     } else {
-        srcList = loaders.split(',');
+        srcList = srcList.concat(loaders.split(','));
     }
 
+    var map = {};
     for (var i = 0, len = srcList.length; i < len; i++) {
-        scripts = scripts.concat(['<script type="text/javascript" src="', path, 'js/', srcList[i], '.js"><\/', 'script>']);
+        var name = srcList[i];
+        if (!map[name]) {
+            scripts = scripts.concat(['<script type="text/javascript" src="', path, 'js/', srcList[i], '.js"><\/', 'script>']);
+            map[name] = true;
+        }
     }
 
     scripts = scripts.join('');

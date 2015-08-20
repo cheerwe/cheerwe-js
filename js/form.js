@@ -196,8 +196,8 @@
 		 * @return {[type]}    [description]
 		 */
 		validateEl: function(el) {
-			var rule = el.attr('data-rule');
-			var msg = el.attr('data-rule-message');
+			var rule = el.data('rule'); //data-rule=""
+			var msg = el.data('rule-message'); //data-rule-message=""
 			var value = el.val();
 
 			if (rule) {
@@ -547,6 +547,13 @@
 					min -= 0;
 					max -= 0;
 					return max >= valLen;
+				}
+			},
+			"compare": {
+				errorMsg: '两次输入的结果不相同！',
+				successMsg: '',
+				check: function(val, cel) {
+					return $(cel).val() == val;
 				}
 			}
 		}
