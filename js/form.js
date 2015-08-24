@@ -83,7 +83,7 @@
 	 */
 	var setInputVal = function(el, val, data) {
 		var name = el.name;
-
+		val += '';
 		switch (el.type) {
 			case 'radio':
 				if (el.value == val) {
@@ -151,6 +151,7 @@
 				var tagName = this.tagName.toLowerCase();
 				var name = this.name;
 				var val = data[name];
+				val = val === 0 ? '0' : val;
 				if (name && (cover || val !== undefined)) {
 					if (tagName == 'input') {
 						setInputVal(this, val || '', data);
