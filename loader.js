@@ -1,7 +1,7 @@
 (function() {
     var LoaderUtil = {
         map: {},
-        scritpMap: {
+        scriptMap: {
             'bootstrap': 'lib/bootstrap-2.0.0/js/bootstrap.min',
             'umeditor': 'lib/umeditor-1.2.2/umeditor.min',
             'auto-complete': 'js/auto-complete',
@@ -17,7 +17,7 @@
             'tabs': 'js/tabs'
         },
         styleMap: {
-            'bootstrap': 'lib/bootstrap-2.0.0/css/bootstrap.min.css'
+            'bootstrap': 'lib/bootstrap-2.0.0/css/bootstrap.min'
         },
         getLoaders: function() {
             var script = document.getElementsByTagName('script');
@@ -29,19 +29,18 @@
         getModules: function() {
             var loaders = LoaderUtil.getLoaders();
 
-            var srcList;
+            var srcList = ['bootstrap'];
             if (loaders) {
                 srcList = srcList.concat(loaders.split(','));
-            } else if {
+            } else {
                 srcList = srcList.concat(['auto-complete', 'date-picker', 'dialog', 'form', 'grid', 'mask', 'message', 'number-editor', 'pagebar', 'select', 'tabs']);
             }
-            srcList.unshift('bootstrap');
 
             return srcList;
         },
         create: function(sc, type) {
             var list = [];
-            var fn = type == 'stype' ? $we.__createStyle : $we.__createScript;
+            var fn = type == 'style' ? __weCreateStyle : __weCreateScript;
 
             if (sc) {
                 sc = sc.split(',');
@@ -57,21 +56,23 @@
             return list;
         },
         load: function() {
-            var ss = [];
+            var styleList = [],
+                scriptList = [];
+
             var moduleList = LoaderUtil.getModules();
 
             for (var i = 0, len = moduleList.length; i < len; i++) {
                 var name = moduleList[i];
 
-                var style = stypeMap[name];
-                ss.concat(create(style, 'style'));
+                var style = LoaderUtil.styleMap[name];
+                styleList = styleList.concat(LoaderUtil.create(style, 'style'));
 
-                var script = scriptMap[name];
-                ss.concat(create(script, 'script'));
+                var script = LoaderUtil.scriptMap[name];
+                scriptList = scriptList.concat(LoaderUtil.create(script, 'script'));
             }
-
-            ss = ss.join('');
-            document.write(ss);
+            
+            $(document.head).append(styleList.join(''));
+            $(document.head).append(scriptList.join(''));
         }
     };
 
