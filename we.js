@@ -4,31 +4,19 @@
 
     var path = script.src.replace('we.js', '');
 
+    var createScript = wejs._createScript = function(name) {
+        return ['<script type="text/javascript" src="', path, name, '.js"><\/', 'script>'].join('');
+    };
+    var createStyle = wejs._createStype = function(name) {
+        return ['<link type="text/css" rel="stylesheet" href="', path, name, '.css"/>'].join('');
+    };
     var scripts = [
-        '<link type="text/css" rel="stylesheet" href="', path, 'css/we.css"/>'
+        createStyle('css/we'),
+        createScript('lib/jquery/jquery-.17.2'),
+        createScript('js/core'),
+        createScript('js/ajax'),
+        createScript('js/component')
     ];
-
-    var loaders = $(script).data('loader');
-
-    var srcList = ['core', 'ajax', 'component'];
-
-    if (loaders == 'all') {
-        srcList = srcList.concat(['auto-complete', 'date-picker', 'dialog', 'form', 'grid', 'mask', 'message', 'number-editor', 'pagebar', 'select', 'tabs']);
-    } else if (!loaders) {
-
-    } else {
-        srcList = srcList.concat(loaders.split(','));
-    }
-
-    var map = {};
-    for (var i = 0, len = srcList.length; i < len; i++) {
-        var name = srcList[i];
-        if (!map[name]) {
-            scripts = scripts.concat(['<script type="text/javascript" src="', path, 'js/', srcList[i], '.js"><\/', 'script>']);
-            map[name] = true;
-        }
-    }
-
     scripts = scripts.join('');
     document.write(scripts);
 })();
