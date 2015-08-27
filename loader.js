@@ -71,8 +71,8 @@
                 scriptList = scriptList.concat(LoaderUtil.create(script, 'script'));
             }
             
-            $(document.head).append(styleList.join(''));
-            $(document.head).append(scriptList.join(''));
+            document.write(styleList.join(''));
+            document.write(scriptList.join(''));
         }
     };
 
