@@ -2,13 +2,14 @@
     var LoaderUtil = {
         map: {},
         scriptMap: {
-            'bootstrap': 'lib/bootstrap-2.0.0/js/bootstrap.min',
+            // 'bootstrap': 'lib/bootstrap-2.0.0/js/bootstrap.min',
+            'jquery-tmpl': 'lib/jquery/jquery.tmpl',
             'umeditor': 'lib/umeditor-1.2.2/umeditor.min',
             'auto-complete': 'js/auto-complete',
-            'date-picker': 'lib/my97datepicker/wdatepicker,js/date-picker',
+            'date-picker': 'js/date-picker',
             'dialog': 'js/dialog',
             'form': 'js/form',
-            'grid': 'jquery.tmpl,js/grid',
+            'grid': 'lib/jquery/jquery.tmpl,js/grid',
             'mask': 'js/mask',
             'message': 'js/message',
             'number-editor': 'js/number-editor',
@@ -17,7 +18,7 @@
             'tabs': 'js/tabs'
         },
         styleMap: {
-            'bootstrap': 'lib/bootstrap-2.0.0/css/bootstrap.min'
+            // 'bootstrap': 'lib/bootstrap-2.0.0/css/bootstrap.min'
         },
         getLoaders: function() {
             var script = document.getElementsByTagName('script');
@@ -29,7 +30,7 @@
         getModules: function() {
             var loaders = LoaderUtil.getLoaders();
 
-            var srcList = ['bootstrap'];
+            var srcList = [];
             if (loaders) {
                 srcList = srcList.concat(loaders.split(','));
             } else {
@@ -70,7 +71,7 @@
                 var script = LoaderUtil.scriptMap[name];
                 scriptList = scriptList.concat(LoaderUtil.create(script, 'script'));
             }
-            
+
             document.write(styleList.join(''));
             document.write(scriptList.join(''));
         }

@@ -13,6 +13,7 @@
     var scripts = [
         createStyle('css/we'),
         createScript('lib/jquery/jquery-1.7.2'),
+        createScript('lib/bootstrap-2.0.0/js/bootstrap.min'),
         createScript('js/core'),
         createScript('js/ajax'),
         createScript('js/component')
