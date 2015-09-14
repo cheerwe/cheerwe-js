@@ -8,7 +8,7 @@
 		max: null,
 		minGear: null,
 		maxGear: null,
-		cls: 'input-prepend input-append',
+		cls: 'we-number-editor input-prepend input-append',
 		inputSize: 'medium', //mini small medium large xlarge xxlarge
 		inputAlign: 'center',
 		name: '',

@@ -52,5 +52,10 @@
 }
 
 .we-date-picker .input-medium{
-    width: 168px;
+    width: 167px;
+}
+
+
+.we-number-editor .input-medium{
+    width: 145px;
 }
