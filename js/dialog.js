@@ -1,5 +1,19 @@
 (function() {
-    var tmpl = '<div class="modal hide fade we-dialog" id="${id}" style="{{if width}}width:${width}px{{/if}}"><div class="modal-header" data-role="header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 data-role="title">${title}</h4></div><div class="modal-body" data-role="body" style="{{if height}}height:${height}px{{/if}}"></div>{{if hasFooter}}<div class="modal-footer" data-role="footer">{{each buttons}}<a href="javascript:void(0);" class="btn ${this.cls}" data-role="${this.name}">{{if this.icon}}<i class="icon ${this.icon}"</i>{{/if}}${this.text}</a>{{/each}}</div>{{/if}}</div>';
+    var tmpl = '<div class="modal hide fade we-dialog" id="${id}" style="{{if width}}width:${width}px{{/if}}">\
+                    <div class="modal-header" data-role="header">\
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>\
+                        <h4 data-role="title">${title}</h4>\
+                    </div>\
+                    <div class="modal-body" data-role="body" style="{{if height}}height:${height}px{{/if}}">\
+                    </div>\
+                    {{if hasFooter}}\
+                    <div class="modal-footer" data-role="footer">\
+                        {{each buttons}}\
+                        <a href="javascript:void(0);" class="btn ${this.cls}" data-role="${this.name}">{{if this.icon}}<i class="icon ${this.icon}"</i>{{/if}}${this.text}</a>\
+                        {{/each}}\
+                    </div>\
+                    {{/if}}\
+                </div>';
 
     var TMPL_NAME = 'wejs_dialog_template';
     var DIALOG_TEMPLATE = $.template(TMPL_NAME, tmpl);
