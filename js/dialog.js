@@ -44,12 +44,12 @@
             handler: 'doCancel'
         },
         'yes': {
-            text: '确定',
+            text: '是',
             cls: 'btn-primary',
             handler: 'doSure'
         },
         'no': {
-            text: '取消',
+            text: '否',
             handler: 'doCancel'
         }
     }

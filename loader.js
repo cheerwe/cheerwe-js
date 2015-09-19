@@ -15,7 +15,8 @@
             'number-editor': 'js/number-editor',
             'pagebar': 'js/pagebar',
             'select': 'js/select',
-            'tabs': 'js/tabs'
+            'tabs': 'js/tabs',
+            'mode-selector': 'js/mode-selector'
         },
         styleMap: {
             // 'bootstrap': 'lib/bootstrap-2.0.0/css/bootstrap.min'

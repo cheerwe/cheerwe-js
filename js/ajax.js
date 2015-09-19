@@ -3,6 +3,10 @@
 		config = $.extend({}, {
 			dataType: 'json',
 			method: 'POST',
+			headers: {
+				isAjax: true
+			},
+			// contentType: 'application/json;charset=UTF-8',
 			onComplete: function() {},
 			onSuccess: function() {},
 			onFail: function(ret) {
