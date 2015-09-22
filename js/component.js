@@ -213,6 +213,9 @@
 				if (autoRender) {
 					ins.render();
 				}
+				if (config.id === "") {
+					delete config.id;
+				}
 				ins.set(config);
 			}
 		});

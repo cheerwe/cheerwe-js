@@ -2,12 +2,13 @@
     $we.AutoComplete = $we.Component.extend({
         url: '',
         data: '',
-        delay: 300,
+        delay: 500,
         name: '',
+        valueName: '',
         paramName: 'key', //异步参数名称
         itemsCount: 10,
-        textField: '',
-        valueField: '',
+        textField: 'name',
+        valueField: 'id',
         filterType: 'remote',
         _delayFilter: null,
         _currentIndex: -1,
@@ -36,7 +37,6 @@
                 index = target.attr('data-index'),
                 txt = target.text(),
                 val = target.attr('data-val');
-
             this.el.val(txt);
             this._getHiddenEl().val(val);
             this._currentIndex = index;
@@ -62,8 +62,8 @@
             }
         },
         _initHidden: function() {
-            this.el.get(0).name = '';
-            this.el.after(['<input type="hidden" value="" name="', this.name, '" id="', this.id, '-val"/>'].join(''));
+            // this.el.get(0).name = '';
+            this.el.after(['<input type="hidden" value="" name="', this.valueName, '" id="', this.id, '-val"/>'].join(''));
         },
         /**
          * 获取选中的data
@@ -155,6 +155,10 @@
                 '__key': this.el.val()
             };
 
+            if (!data.__key) {
+                return;
+            }
+
             this.data = [];
             $we.ajax({
                 url: this.url,
@@ -176,7 +180,6 @@
          */
         renderData: function(data) {
             this._initDDMenu();
-
             var len = Math.min(data.length, this.itemsCount),
                 htmls = [];
 
@@ -200,6 +203,8 @@
             htmls = htmls.join('');
 
             this._getDDMenuEl().html(htmls);
+
+            this._getDDMenuEl().show();
         },
         /**
          * 初始化数据
@@ -209,7 +214,7 @@
             $we.AutoComplete.superclass.doInit.apply(this);
 
             this._initDDMenu();
-            if (this.el.get(0).name) {
+            if (this.valueName) {
                 this._initHidden();
             }
         }
@@ -219,7 +224,8 @@
 
     var selector = '[data-role="wejs-autocomplete"]';
     $we.autoRender(selector, $we.AutoComplete, {
-        name: '',
+        name: 'string',
+        valueName: 'string',
         deploy: 'number',
         valueField: 'string',
         textField: 'string',
