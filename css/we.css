@@ -11,7 +11,7 @@
 }
 
 .wejs-mask-loading {
-    background-image: url("../images/loading.gif");
+    background-image: url("../imgs/loading.gif");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -39,16 +39,16 @@
     background-repeat: no-repeat;
 }
 .we-icon.we-icon-help{
-    background-image: url("../images/help.png");
+    background-image: url("../imgs/help.png");
 }
 .we-icon.we-icon-alert{
-    background-image: url("../images/alert.png");
+    background-image: url("../imgs/alert.png");
 }
 .we-icon.we-icon-error{
-    background-image: url("../images/error.png");
+    background-image: url("../imgs/error.png");
 }
 .we-icon.we-icon-info{
-    background-image: url("../images/info.png");
+    background-image: url("../imgs/info.png");
 }
 
 .we-date-picker .input-medium{

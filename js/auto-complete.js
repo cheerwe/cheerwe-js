@@ -53,12 +53,15 @@
                 this.el.after(['<ul id="', this.id, '-ddmenu" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu"></ul>'].join(''));
 
                 this._getDDMenuEl().on('click', 'a', {
-                    scope: this,
-                }, function(event) {
-                    var scope = event.data.scope;
+                        scope: this,
+                    }, function(event) {
+                        var scope = event.data.scope;
 
-                    scope._doSelect(event);
-                })
+                        scope._doSelect(event);
+                    })
+                    .css({
+                        'min-width': this.el.outerWidth()
+                    })
             }
         },
         _initHidden: function() {
@@ -77,12 +80,18 @@
          * @return {[type]} [description]
          */
         initEvents: function() {
-            this.el.on('keyup', {
-                scope: this,
-                handler: this._onKeyup,
-            }, function(event) {
-                var data = event.data;
-                data.handler.call(data.scope);
+            var _this = this;
+            this.el.on('keyup', function(event) {
+                _this._onKeyup();
+            });
+
+            this.el.on('blur', function() {
+                setTimeout(function() {
+                    _this._getDDMenuEl().hide();
+                }, 100);
+            });
+            this.el.on('focus', function() {
+                _this.filter();
             });
         },
         /**
@@ -91,6 +100,11 @@
         filter: function() {
             var el = this.el,
                 offset = el.offset();
+
+            var val = el.val();
+            if (!val) {
+                return;
+            }
 
             offset.top += el.outerHeight();
 
@@ -105,7 +119,6 @@
 
             this._getDDMenuEl()
                 .show()
-                .width(this.el.outerWidth())
                 .offset(offset);
         },
         /**
@@ -154,10 +167,6 @@
             var data = {
                 '__key': this.el.val()
             };
-
-            if (!data.__key) {
-                return;
-            }
 
             this.data = [];
             $we.ajax({

@@ -54,7 +54,6 @@
 		_doAdd: function() {
 			var val = this.getValue(),
 				max = this.max;
-
 			val++;
 			if (max === null || max >= val) {
 				this.setValue(val);
