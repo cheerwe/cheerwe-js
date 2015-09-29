@@ -283,7 +283,7 @@
 	 * 校验相关
 	 * @type {Object}
 	 */
-	Verification = {
+	var Verification = {
 		/**
 		 * 添加校验规则
 		 * @param {[type]} name   [description]
@@ -559,6 +559,8 @@
 			}
 		}
 	};
+
+	$we.Validate = Verification;
 
 	$we.Verification = Verification;
 

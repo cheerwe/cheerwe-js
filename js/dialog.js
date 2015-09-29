@@ -233,9 +233,10 @@
             };
         }
         $we.apply(config, {
-            buttons: ['yes'],
+            buttons: ['sure'],
             doSure: function(e) {
                 this.callback && this.callback();
+                this.hide();
             }
         });
         config.content = '<div class="we-dialog-alert"><i class="we-icon we-icon-alert"></i><div class="content">' + config.content + '</div></div>';
@@ -259,7 +260,7 @@
      */
     Dialog.confirm = function(config) {
         $we.apply(config, {
-            buttons: ['yes', 'no'],
+            buttons: ['sure', 'cancel'],
             doCancel: function() {
                 this.callback && this.callback(false);
                 this.hide();
