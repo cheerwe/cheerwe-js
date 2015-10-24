@@ -374,5 +374,4 @@
         pageIndex: 'number',
         data: 'object', //GRID的数据
     });
-
 })();
