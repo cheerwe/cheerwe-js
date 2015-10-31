@@ -19,7 +19,8 @@ module.exports = function(grunt) {
 					'js/select.js',
 					'js/tabs.js',
 					'js/dialog.js',
-					'js/auto-complete.js'
+					'js/auto-complete.js',
+					'js/grid.js'
 				],
 				dest: 'we.js'
 			}
