@@ -790,6 +790,10 @@
 		}
 	};
 	$we.Date = DateUtil;
+	$we.formatDate = DateUtil.format;
+	$we.parseDate = DateUtil.parse;
+
+
 
 	/**@desc HTML编码相关封装*/
 	$we.apply($we, {

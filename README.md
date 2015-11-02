@@ -1,10 +1,8 @@
 # CheerweJS
-=========================
 
 CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者使用最少的代码，完成预定义的功能需求，让开发者快速上手
 
-## 说明
---------------------------
+## 一、说明
 
 **1、目录结构说明：**
 
@@ -19,8 +17,7 @@ CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者�
 本框架依赖一个核心的core，核心core可以单独使用，不依赖于任何其他的第三方库，核心core主题提供各类公共的帮助方法，提供所有组件的基类$we.Object
 
 
-## 组件列表
---------------------------
+## 二、组件列表
 
 * Core
 * Ajax
@@ -38,8 +35,7 @@ CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者�
 * Tabs
 
 
-## 使用方式
-----------------------------
+## 三、使用方式
 
 **1、第三方组件库依赖**
 
@@ -49,6 +45,7 @@ CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者�
 <script type="text/javascript" src="../lib/jquery/jquery-1.7.2.js"></script>
 <script type="text/javascript" src="../lib/jquery/jquery.tmpl.js"></script>
 <script type="text/javascript" src="../lib/bootstrap-2.0.0/js/bootstrap.min.js"></script>
+
 <link type="text/css" rel="stylesheet" href="../lib/bootstrap-2.0.0/css/bootstrap.min.css"/>
 
 
@@ -68,11 +65,19 @@ CheerweJS是一款基于bootstrap2.0风格的前端组件，力求让开发者�
 **2、在需要使用本框架的页面中，添加以下引用即可**
 
 `````````html
-
 <script type="text/javascript" src="/we.min.js"></script>
-
 
 `````````
 
 PS：使用时，请将路径切换为您应用中的具体路径
 
+
+## 四、组件快速使用API
+
+
+
+Datepicker
+``````````html
+<span data-role="wejs-datepicker" id="checkOutDate" value="now+1" name="checkOutDate" min="now" maxGear="checkInDate"></span>
+
+``````````
