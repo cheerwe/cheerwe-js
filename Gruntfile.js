@@ -13,6 +13,7 @@ module.exports = function(grunt) {
 					'js/mask.js',
 					'js/form.js',
 					'js/message.js',
+					'js/mode-selector.js',
 					'js/number-editor.js',
 					'js/date-picker.js',
 					'js/pagebar.js',
